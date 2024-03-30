@@ -3,36 +3,39 @@
     <h1>Gofree Tier 2 API Explorer</h1>
 
     <div class="row">
-      <p>Software for interacting with the GoFree API on B&G Multi Function Displays (MFD) such as Lowrance, Simrad etc.
-        This
-        exposes most of the NMEA2000 data that is on your boat network. The specification can be found here: <a
+      <p>Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD) such as Lowrance,
+        Simrad etc. This exposes most of the NMEA2000 data that is on your boat network. The specification can be found
+        here: <a
           href="https://softwaredownloads.navico.com/Lowrance/FTP/Lowrance_Software%20-%20Copy/BG_Documents/GoFree-Tier2-Toolkit-(view-only).pdf">GoFree
           Tier 2 Specification</a></p>
       <p>
         You can can find the MFD IP under the settings -> network option. URL format is 'ws://your-ip:2053'
       </p>
       <p>
+        Note! This app needs to be loaded via http:// or it will not be allowed to connect with the MFD.
       </p>
     </div>
 
     <div class="row">
       <div class="col-sm-2">
-        <button class="btn btn-primary" type="button" @click=connect()>Open
+        <button class="btn btn-primary" type="button" @click=connect() :disabled="socket == null ? false : true">Open
           Socket</button>
       </div>
       <div class="col-sm-3">
-        <input v-model="url" type="text" class="form-control">
+        <input v-model="url" type="text" class="form-control" :disabled="socket == null ? false : true">
       </div>
-      <div class="col-sm-5">
+      <div class="col-sm-7">
         <button class="btn btn-secondary" type="button" @click="reqDataList()">DataList</button>&nbsp;
         <button class="btn btn-secondary" type="button" @click="reqFilterDataList()">Filter Options</button>&nbsp;
         <button class="btn btn-secondary" type="button" @click="clearSerial()">Clear Output</button>&nbsp;
         <button class="btn btn-secondary" type="button" @click="fetchAll()">Fetch all values</button>&nbsp;
-        <!--
-        <button class="btn btn-secondary" type="button" @click="clipboard()">Copy</button>&nbsp;
-        -->
+        <button class="btn btn-secondary" type="button" @click="clipboard()">Copy clipboard</button>&nbsp;
       </div>
-      <div class="col-sm-2">
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <p></p>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" v-model="showRaw">
           <label class="form-check-label" for="flexCheckDefault">
@@ -40,7 +43,6 @@
           </label>
         </div>
       </div>
-
     </div>
 
     <hr>
@@ -70,7 +72,7 @@
     </div>
     <hr>
 
-    <pre>{{ serial }}</pre>
+    <pre id="serial">{{ serial }}</pre>
     <hr>
     <div class="row">
       <p>(c) 2024 Magnus Persson</p>
@@ -83,7 +85,7 @@ import { ref, onMounted, computed } from 'vue'
 
 const props = defineProps(['App'])
 const socket = ref(null)
-const serial = ref("Socket not connected")
+const serial = ref("Socket not connected\n")
 const maxLines = 500
 const showRaw = ref(false)
 const filterInvalid = ref(false)
@@ -423,6 +425,9 @@ function filterCategories() {
 }
 
 onMounted(() => {
+  if(window.location.href.startsWith("https://"))
+    serial.value += "App cannot be loaded via https since that will block access to MFD"
+
   filterCategories()
 })
 
@@ -465,6 +470,8 @@ function send(message) {
   if (socket.value) {
     // console.log("Sending data: " + message)
     socket.value.send(message + '\r\n')
+  } else {
+    serial.value += "Not connected\n"
   }
 }
 
@@ -500,7 +507,7 @@ function callbackData(json) {
   for (var j = 0; j < json.Data.length; j++) {
     for (var i = 0; i < dataList.value.length; i++) {
       if (dataList.value[i].value == json.Data[j].id && json.Data[j].valid) {
-        serial.value += dataList.value[i].category + " - " + dataList.value[i].label + ": " + json.Data[j].valStr.replace('&deg;', '°') + " " + dataList.value[i].unit + "\n"
+        serial.value += dataList.value[i].value + " - " + dataList.value[i].category + " - " + dataList.value[i].label + ": " + json.Data[j].valStr.replace('&deg;', '°') + " " + dataList.value[i].unit + "\n"
       }
     }
   }
@@ -545,11 +552,13 @@ function callbackDataList(json) {
 }
 
 function clipboard() {
-  console.log("Not implemented")
+  var text = document.getElementById("serial").innerHTML
+  console.log(text)
+  navigator.clipboard.writeText(text);
 }
 
 function connect() {
-  // console.log("Connecting to MFD websocket")
+  serial.value += "Connecting...\n"
 
   socket.value = new WebSocket(url.value)
 
@@ -565,9 +574,9 @@ function connect() {
       list.shift();
     serial.value = list.join('\n');
 
-    if(showRaw.value)
+    if (showRaw.value)
       serial.value += event.data + '\n'
-    
+
     socketCallback(event.data)
   }
 
@@ -579,7 +588,7 @@ function connect() {
   }
 
   socket.value.onerror = function (event) {
-    console.log("Websocket error: " + event)
+    serial.value += "Failed to connect with MFD\n"
   }
 }
 </script>

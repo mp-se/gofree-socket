@@ -4,6 +4,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   productionSourceMap: false,
   filenameHashing: false,
+  publicPath: "/gofree/",
   css: {
     extract: true,
   },
