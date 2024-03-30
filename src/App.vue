@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Gofree Tier 2 API Explorer</h1>
 
-    <div class="row">
+    <div class="row row-gap-2 column-gap-2 py-2">
       <p>Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD) such as Lowrance,
         Simrad etc. This exposes most of the NMEA2000 data that is on your boat network. The specification can be found
         here: <a
@@ -11,31 +11,39 @@
       <p>
         You can can find the MFD IP under the settings -> network option. URL format is 'ws://your-ip:2053'
       </p>
-      <p>
-        Note! This app needs to be loaded via http:// or it will not be allowed to connect with the MFD.
-      </p>
     </div>
 
-    <div class="row">
+    <div class="row row-gap-2 column-gap-2">
       <div class="col-sm-2">
-        <button class="btn btn-primary" type="button" @click=connect() :disabled="socket == null ? false : true">Open
+        <label class="form-label">Connect</label>
+        <button class="btn btn-primary" style="width:150px" type="button" @click=connect() :disabled="socket == null ? false : true">Open
           Socket</button>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
+        <label class="form-label">Socket URL</label>
         <input v-model="url" type="text" class="form-control" :disabled="socket == null ? false : true">
       </div>
-      <div class="col-sm-7">
-        <button class="btn btn-secondary" type="button" @click="reqDataList()">DataList</button>&nbsp;
-        <button class="btn btn-secondary" type="button" @click="reqFilterDataList()">Filter Options</button>&nbsp;
-        <button class="btn btn-secondary" type="button" @click="clearSerial()">Clear Output</button>&nbsp;
-        <button class="btn btn-secondary" type="button" @click="fetchAll()">Fetch all values</button>&nbsp;
-        <button class="btn btn-secondary" type="button" @click="clipboard()">Copy clipboard</button>&nbsp;
-      </div>
+
     </div>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <p></p>
+    <div class="row row-gap-2 column-gap-2 py-2">
+
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqDataList()">DataList</button>&nbsp;
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqFilterDataList()">Filter Options</button>&nbsp;
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="clearSerial()">Clear Output</button>&nbsp;
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="fetchAll()">Fetch all values</button>&nbsp;
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="clipboard()">Copy clipboard</button>&nbsp;
+      </div>
+      <div class="col-sm-4">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" v-model="showRaw">
           <label class="form-check-label" for="flexCheckDefault">
@@ -47,32 +55,42 @@
 
     <hr>
 
-    <div class="row">
+    <div class="row row-gap-2 column-gap-2 py-2">
       <div class="col-sm-2">
+        <label class="form-label">Category</label>
         <select v-model="selectedCat" class="form-select">
           <option v-for="cat in dataCategoryList" :key="cat" :value="cat">{{ cat }}</option>
         </select>
-
       </div>
       <div class="col-sm-4">
+        <label class="form-label">Data</label>
         <select v-model="selectedData" class="form-select">
           <option v-for="data in filteredDataList" :key="data.value" :value="data.value">{{ data.label }}</option>
         </select>
       </div>
 
       <div class="col-sm-2">
+        <label class="form-label">Data ID</label>
         <input v-model="selectedData" type="text" class="form-control">
       </div>
 
-      <div class="col-sm-3">
-        <button class="btn btn-secondary" type="button" @click="reqDataInfo()">Req: DataInfo</button>
-        &nbsp;
-        <button class="btn btn-secondary" type="button" @click="reqData()">Req: Data</button>
+    </div>
+
+    <div class="row row-gap-2 column-gap-2 py-2">
+
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqDataInfo()">Req: DataInfo</button>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqData()">Req: Data</button>
       </div>
     </div>
     <hr>
 
-    <pre id="serial">{{ serial }}</pre>
+    <div class="row">
+      <pre id="serial">{{ serial }}</pre>
+    </div>
+
     <hr>
     <div class="row">
       <p>(c) 2024 Magnus Persson</p>
@@ -83,7 +101,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { dataList } from '@/gofree.js'
- 
+
 const props = defineProps(['App'])
 const socket = ref(null)
 const serial = ref("Socket not connected\n")
@@ -130,12 +148,12 @@ function filterCategories() {
 
 onMounted(() => {
   var u = localStorage.getItem("url")
-  if(u == null) 
-      u = "ws://192.168.1.123:2053" 
+  if (u == null)
+    u = "ws://192.168.1.123:2053"
 
   url.value = u
 
-  if(window.location.href.startsWith("https://"))
+  if (window.location.href.startsWith("https://"))
     serial.value += "App cannot be loaded via https since that will block access to MFD"
 
   filterCategories()
