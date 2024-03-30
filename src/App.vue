@@ -92,7 +92,7 @@ const showRaw = ref(false)
 const filterInvalid = ref(false)
 const selectedCat = ref("GPS")
 const selectedData = ref("1")
-const url = ref("ws://192.168.1.123:2053")
+const url = ref("")
 const dataCategoryList = ref([]) // This will be created based on data list
 const filteredDataList = computed(() => {
   var list = []
@@ -114,7 +114,6 @@ const filteredDataList = computed(() => {
   return list
 })
 
-
 function filterCategories() {
   var cat = []
 
@@ -130,6 +129,12 @@ function filterCategories() {
 }
 
 onMounted(() => {
+  var u = localStorage.getItem("url")
+  if(u == null) 
+      u = "ws://192.168.1.123:2053" 
+
+  url.value = u
+
   if(window.location.href.startsWith("https://"))
     serial.value += "App cannot be loaded via https since that will block access to MFD"
 
@@ -264,6 +269,7 @@ function clipboard() {
 
 function connect() {
   serial.value += "Connecting...\n"
+  localStorage.setItem("url", url.value)
 
   socket.value = new WebSocket(url.value)
 
