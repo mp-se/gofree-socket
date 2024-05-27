@@ -38,7 +38,7 @@ jobs:
           mkdir -p ghpages
           cp -r dist/* ghpages/
           cd ghpages
-          touch docs/.nojekyll
+          touch index.html
           git config --local user.email "action@noreply.github.com"
           git config --local user.name "GitHub Action"
           git add .
