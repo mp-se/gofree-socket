@@ -6,6 +6,10 @@ I wrote this software to find out what data could be extracted from my boat netw
 
 If you want a dashboard on your mobile device I would recommend the NMEAremote from https://www.zapfware.de/
 
+## Deployment
+
+You can run this from a folder or a webserver using http, https will not work since the browser security will block you from accessing the MFD then. There is also a docker image build available.
+
 ## Usage
 
 This program just needs an IP adress to connect to your MFD, which can be found under settings networking menu on the device.

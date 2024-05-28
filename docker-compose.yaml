@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  gofree:
+    build: .
+    hostname: gofree
+    restart: always
+    ports:
+      - 8080:8080

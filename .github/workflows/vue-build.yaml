@@ -29,24 +29,24 @@ jobs:
           message: 'GitHub Action Build'
           pathspec_error_handling: ignore
 
-      - name: Commit documentation changes
-        run: |
-          pwd
-          ls -al
-          ls -al dist 
-          git clone https://github.com/mp-se/gofree-socket.git --branch ghpages --single-branch ghpages
-          mkdir -p ghpages
-          cp -r dist/* ghpages/
-          cd ghpages
-          touch index.html
-          git config --local user.email "action@noreply.github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Update deployment" -a || true
+      # - name: Commit documentation changes
+      #   run: |
+      #     pwd
+      #     ls -al
+      #     ls -al dist 
+      #     git clone https://github.com/mp-se/gofree-socket.git --branch ghpages --single-branch ghpages
+      #     mkdir -p ghpages
+      #     cp -r dist/* ghpages/
+      #     cd ghpages
+      #     touch index.html
+      #     git config --local user.email "action@noreply.github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add .
+      #     git commit -m "Update deployment" -a || true
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: ghpages
-          directory: ghpages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     branch: ghpages
+      #     directory: ghpages
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
