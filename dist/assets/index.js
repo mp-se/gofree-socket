@@ -6465,11 +6465,35 @@ const dataList = ref([
   { valid: true, unit: "", category: "Cabin", label: "Main Cabin Temperature", value: 52 },
   { valid: true, unit: "", category: "Live Well Tank", label: "Live Well Temperature", value: 53 },
   { valid: true, unit: "", category: "Bait Well", label: "Bait Well Temperature", value: 54 },
-  { valid: true, unit: "", category: "Refrigerator", label: "Refrigeration Temperature", value: 55 },
-  { valid: true, unit: "", category: "Heating System", label: "Heating System Temperature", value: 56 },
+  {
+    valid: true,
+    unit: "",
+    category: "Refrigerator",
+    label: "Refrigeration Temperature",
+    value: 55
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Heating System",
+    label: "Heating System Temperature",
+    value: 56
+  },
   { valid: true, unit: "", category: "Weather", label: "Dew Point Temperature", value: 57 },
-  { valid: true, unit: "", category: "Weather", label: "Apparent Wind Chill Temperature", value: 58 },
-  { valid: true, unit: "", category: "Weather", label: "Theoretic Wind Chill Temperature", value: 59 },
+  {
+    valid: true,
+    unit: "",
+    category: "Weather",
+    label: "Apparent Wind Chill Temperature",
+    value: 58
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Weather",
+    label: "Theoretic Wind Chill Temperature",
+    value: 59
+  },
   { valid: true, unit: "", category: "Weather", label: "Heat Index Temperature", value: 60 },
   { valid: true, unit: "", category: "Freezer", label: "Freezer Temperature", value: 61 },
   { valid: true, unit: "", category: "Engine", label: "Engine Temperature", value: 62 },
@@ -6496,25 +6520,85 @@ const dataList = ref([
   { valid: true, unit: "", category: "Engine", label: "Suzuki Alarm Level Low", value: 85 },
   { valid: true, unit: "", category: "Engine", label: "Suzuki Alarm Level High", value: 86 },
   { valid: true, unit: "", category: "Fuel Tank", label: "Fuel Tank Level", value: 87 },
-  { valid: true, unit: "", category: "Fresh Water Tank", label: "Fresh Water Fluid Level", value: 88 },
-  { valid: true, unit: "", category: "Gray Water Tank", label: "Gray Water Fluid Level", value: 89 },
+  {
+    valid: true,
+    unit: "",
+    category: "Fresh Water Tank",
+    label: "Fresh Water Fluid Level",
+    value: 88
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Gray Water Tank",
+    label: "Gray Water Fluid Level",
+    value: 89
+  },
   { valid: true, unit: "", category: "Live Well Tank", label: "Live Well Fluid Level", value: 90 },
   { valid: true, unit: "", category: "Oil Tank", label: "Oil Fluid Level", value: 91 },
-  { valid: true, unit: "", category: "Black Water Tank", label: "Black Water Fluid Level", value: 92 },
+  {
+    valid: true,
+    unit: "",
+    category: "Black Water Tank",
+    label: "Black Water Fluid Level",
+    value: 92
+  },
   { valid: true, unit: "", category: "Fuel Tank", label: "Fuel Remaining", value: 93 },
-  { valid: true, unit: "", category: "Fresh Water Tank", label: "Fresh Water Fluid Volume", value: 94 },
-  { valid: true, unit: "", category: "Gray Water Tank", label: "Gray Water Fluid Volume", value: 95 },
+  {
+    valid: true,
+    unit: "",
+    category: "Fresh Water Tank",
+    label: "Fresh Water Fluid Volume",
+    value: 94
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Gray Water Tank",
+    label: "Gray Water Fluid Volume",
+    value: 95
+  },
   { valid: true, unit: "", category: "Live Well Tank", label: "Live Well Fluid Volume", value: 96 },
   { valid: true, unit: "", category: "Oil Tank", label: "Oil Fluid Volume", value: 97 },
-  { valid: true, unit: "", category: "Black Water Tank", label: "Black Water Fluid Volume", value: 98 },
+  {
+    valid: true,
+    unit: "",
+    category: "Black Water Tank",
+    label: "Black Water Fluid Volume",
+    value: 98
+  },
   { valid: true, unit: "", category: "Unconfigured", label: "Generic Fluid Volume", value: 99 },
   { valid: true, unit: "", category: "Unconfigured", label: "Generic Tank Capacity", value: 105 },
   { valid: true, unit: "", category: "Fuel Tank", label: "Fuel Tank Capacity", value: 106 },
-  { valid: true, unit: "", category: "Fresh Water Tank", label: "Fresh Water Tank Capacity", value: 107 },
-  { valid: true, unit: "", category: "Gray Water Tank", label: "Gray Water Tank Capacity", value: 108 },
-  { valid: true, unit: "", category: "Live Well Tank", label: "Live Well Tank Capacity", value: 109 },
+  {
+    valid: true,
+    unit: "",
+    category: "Fresh Water Tank",
+    label: "Fresh Water Tank Capacity",
+    value: 107
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Gray Water Tank",
+    label: "Gray Water Tank Capacity",
+    value: 108
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Live Well Tank",
+    label: "Live Well Tank Capacity",
+    value: 109
+  },
   { valid: true, unit: "", category: "Oil Tank", label: "Oil Tank Capacity", value: 110 },
-  { valid: true, unit: "", category: "Black Water Tank", label: "Black Water Tank Capacity", value: 111 },
+  {
+    valid: true,
+    unit: "",
+    category: "Black Water Tank",
+    label: "Black Water Tank Capacity",
+    value: 111
+  },
   { valid: true, unit: "", category: "Fuel Tank", label: "Tank Fuel Used", value: 112 },
   { valid: true, unit: "", category: "Engine", label: "Engine Fuel Used", value: 113 },
   { valid: true, unit: "", category: "Engine", label: "Trip Fuel Used", value: 114 },
@@ -6549,8 +6633,20 @@ const dataList = ref([
   { valid: true, unit: "", category: "Vessel", label: "Set Humidity", value: 145 },
   { valid: true, unit: "", category: "Rudder", label: "Rudder Angle", value: 146 },
   { valid: true, unit: "", category: "Transmission", label: "Transmission Gear", value: 147 },
-  { valid: true, unit: "", category: "Transmission", label: "Transmission Oil Pressure", value: 148 },
-  { valid: true, unit: "", category: "Transmission", label: "Transmission Oil Temperature", value: 149 },
+  {
+    valid: true,
+    unit: "",
+    category: "Transmission",
+    label: "Transmission Oil Pressure",
+    value: 148
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Transmission",
+    label: "Transmission Oil Temperature",
+    value: 149
+  },
   { valid: true, unit: "", category: "Rudder", label: "Commanded Rudder Angl", value: 150 },
   { valid: true, unit: "", category: "Rudder", label: "Rudder Limit", value: 151 },
   { valid: true, unit: "", category: "Vessel", label: "Off Heading Limit", value: 152 },
@@ -6560,8 +6656,20 @@ const dataList = ref([
   { valid: true, unit: "", category: "Other", label: "Logging Time Remaining", value: 156 },
   { valid: true, unit: "", category: "GPS Status", label: "Position Fix Type", value: 157 },
   { valid: true, unit: "", category: "Engine", label: "Engine Discrete Status", value: 158 },
-  { valid: true, unit: "", category: "Transmission", label: "Transmission Discrete Status", value: 159 },
-  { valid: true, unit: "", category: "GPS Status", label: "GPS Best of Four Signal to Noise Ratio", value: 160 },
+  {
+    valid: true,
+    unit: "",
+    category: "Transmission",
+    label: "Transmission Discrete Status",
+    value: 159
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "GPS Status",
+    label: "GPS Best of Four Signal to Noise Ratio",
+    value: 160
+  },
   { valid: true, unit: "", category: "Unconfigured", label: "Generic Fluid Level", value: 161 },
   { valid: true, unit: "", category: "Unconfigured", label: "Generic Pressure", value: 162 },
   { valid: true, unit: "", category: "Unconfigured", label: "Generic Temperature", value: 163 },
@@ -6650,7 +6758,13 @@ const dataList = ref([
   { valid: true, unit: "", category: "Other", label: "Supply Voltage", value: 248 },
   { valid: true, unit: "", category: "Navigation", label: "Destination Position", value: 249 },
   { valid: true, unit: "", category: "Engine", label: "Engine Sync State", value: 252 },
-  { valid: true, unit: "", category: "Engine", label: "Engine Predictive General Maintenance", value: 253 },
+  {
+    valid: true,
+    unit: "",
+    category: "Engine",
+    label: "Engine Predictive General Maintenance",
+    value: 253
+  },
   { valid: true, unit: "", category: "Engine", label: "Engine Throttle", value: 254 },
   { valid: true, unit: "", category: "Engine", label: "Engine Steering Angle", value: 255 },
   { valid: true, unit: "", category: "Engine", label: "Engine Break In Required", value: 256 },
@@ -6686,16 +6800,46 @@ const dataList = ref([
   { valid: true, unit: "", category: "AC Output", label: "AC Output 1 Status", value: 287 },
   { valid: true, unit: "", category: "AC Output", label: "AC Output 2 Status", value: 288 },
   { valid: true, unit: "", category: "AC Output", label: "AC Output 3 Status", value: 289 },
-  { valid: true, unit: "", category: "Digital Switching", label: "Switch Manual Override", value: 290 },
-  { valid: true, unit: "", category: "Digital Switching", label: "Switch Reverse Polarity", value: 291 },
-  { valid: true, unit: "", category: "Digital Switching", label: "Switch AC Source Available", value: 292 },
-  { valid: true, unit: "", category: "Digital Switching", label: "Switch AC Contactor System On State", value: 293 },
+  {
+    valid: true,
+    unit: "",
+    category: "Digital Switching",
+    label: "Switch Manual Override",
+    value: 290
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Digital Switching",
+    label: "Switch Reverse Polarity",
+    value: 291
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Digital Switching",
+    label: "Switch AC Source Available",
+    value: 292
+  },
+  {
+    valid: true,
+    unit: "",
+    category: "Digital Switching",
+    label: "Switch AC Contactor System On State",
+    value: 293
+  },
   { valid: true, unit: "", category: "Charger", label: "Charger Battery Instance", value: 294 },
   { valid: true, unit: "", category: "Charger", label: "Charger Operating State", value: 295 },
   { valid: true, unit: "", category: "Charger", label: "Charger Mode", value: 296 },
   { valid: true, unit: "", category: "Charger", label: "Charger Enabled", value: 297 },
   { valid: true, unit: "", category: "Charger", label: "Charger Equalization Pending", value: 298 },
-  { valid: true, unit: "", category: "Charger", label: "Charger Equalization Time Remaining", value: 299 },
+  {
+    valid: true,
+    unit: "",
+    category: "Charger",
+    label: "Charger Equalization Time Remaining",
+    value: 299
+  },
   { valid: true, unit: "", category: "Inverter", label: "Inverter AC Instance", value: 300 },
   { valid: true, unit: "", category: "Inverter", label: "Inverter DC Instance", value: 301 },
   { valid: true, unit: "", category: "Inverter", label: "Inverter Operating State ", value: 302 },
@@ -6703,7 +6847,13 @@ const dataList = ref([
   /* END OF SPECIFICATION - ENTRIES AFTER THIS POINT HAS BEEN DISCOVERED USING THIS TOOL */
   { valid: true, unit: "", category: "New", label: "Sailing Time to Waypoint", value: 304 },
   { valid: true, unit: "", category: "New", label: "Sailing Distance to Waypoint", value: 305 },
-  { valid: true, unit: "", category: "New", label: "Sailing Estimated Time of Arrival", value: 306 },
+  {
+    valid: true,
+    unit: "",
+    category: "New",
+    label: "Sailing Estimated Time of Arrival",
+    value: 306
+  },
   { valid: true, unit: "", category: "New", label: "Latitude", value: 309 },
   { valid: true, unit: "", category: "New", label: "Longitude", value: 310 }
 ]);
@@ -6752,8 +6902,7 @@ const _sfc_main = {
       var found = false;
       for (var i = 0; i < dataList.value.length; i++) {
         if (dataList.value[i].category === selectedCat.value && dataList.value[i].valid) {
-          if (dataList.value[i].value == selectedData.value)
-            found = true;
+          if (dataList.value[i].value == selectedData.value) found = true;
           list.push(dataList.value[i]);
         }
       }
@@ -6775,8 +6924,7 @@ const _sfc_main = {
     }
     onMounted(() => {
       var u = localStorage.getItem("url");
-      if (u == null)
-        u = "ws://192.168.1.123:2053";
+      if (u == null) u = "ws://192.168.1.123:2053";
       url.value = u;
       if (window.location.href.startsWith("https://"))
         serial.value += "App cannot be loaded via https since that will block access to MFD";
@@ -6794,7 +6942,9 @@ const _sfc_main = {
       serial.value += "Fetching all available data\n";
       for (var i = 0; i < dataList.value.length; i++) {
         var instance = 0;
-        send('{"DataReq":[{"id":' + dataList.value[i].value + ',"repeat":false,"inst":' + instance + "}]}");
+        send(
+          '{"DataReq":[{"id":' + dataList.value[i].value + ',"repeat":false,"inst":' + instance + "}]}"
+        );
       }
     }
     function reqDataList() {
@@ -6805,7 +6955,9 @@ const _sfc_main = {
     function reqData() {
       var repeat = false;
       var instance = 0;
-      send('{"DataReq":[{"id":' + selectedData.value + ',"repeat":' + repeat + ',"inst":' + instance + "}]}");
+      send(
+        '{"DataReq":[{"id":' + selectedData.value + ',"repeat":' + repeat + ',"inst":' + instance + "}]}"
+      );
     }
     function reqDataInfo() {
       send('{"DataInfoReq":[' + selectedData.value + "]}");
@@ -6819,12 +6971,9 @@ const _sfc_main = {
     }
     function socketCallback(data) {
       var json = JSON.parse(data);
-      if (json.Data !== void 0)
-        callbackData(json);
-      else if (json.DataInfo !== void 0)
-        callbackDataInfo(json);
-      else if (json.DataList !== void 0)
-        callbackDataList(json);
+      if (json.Data !== void 0) callbackData(json);
+      else if (json.DataInfo !== void 0) callbackDataInfo(json);
+      else if (json.DataList !== void 0) callbackDataList(json);
     }
     function callbackData(json) {
       if (filterInvalid.value) {
@@ -6862,8 +7011,7 @@ const _sfc_main = {
       for (var i = 0; i < list.length; i++) {
         var found = false;
         for (var j = 0; j < dataList.value.length; j++) {
-          if (list[i] === dataList.value[j].value)
-            found = true;
+          if (list[i] === dataList.value[j].value) found = true;
         }
         if (!found) {
           serial.value += "Data " + list[i] + " not found in specification, requesting info!\n";
@@ -6890,11 +7038,9 @@ const _sfc_main = {
       };
       socket.value.onmessage = function(event) {
         var list = serial.value.split("\n");
-        while (list.length > maxLines)
-          list.shift();
+        while (list.length > maxLines) list.shift();
         serial.value = list.join("\n");
-        if (showRaw.value)
-          serial.value += event.data + "\n";
+        if (showRaw.value) serial.value += event.data + "\n";
         socketCallback(event.data);
       };
       socket.value.onclose = function() {
@@ -6910,7 +7056,7 @@ const _sfc_main = {
         _cache[24] || (_cache[24] = createBaseVNode("h1", null, "Gofree Tier 2 API Explorer", -1)),
         _cache[25] || (_cache[25] = createBaseVNode("div", { class: "row row-gap-2 column-gap-2 py-2" }, [
           createBaseVNode("p", null, [
-            createTextVNode("Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD) such as Lowrance, Simrad etc. This exposes most of the NMEA2000 data that is on your boat network. The specification can be found here: "),
+            createTextVNode(" Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD) such as Lowrance, Simrad etc. This exposes most of the NMEA2000 data that is on your boat network. The specification can be found here: "),
             createBaseVNode("a", { href: "https://softwaredownloads.navico.com/Lowrance/FTP/Lowrance_Software%20-%20Copy/BG_Documents/GoFree-Tier2-Toolkit-(view-only).pdf" }, "GoFree Tier 2 Specification")
           ]),
           createBaseVNode("p", null, " You can can find the MFD IP under the settings -> network option. URL format is 'ws://your-ip:2053' ")
@@ -6924,7 +7070,7 @@ const _sfc_main = {
               type: "button",
               onClick: _cache[0] || (_cache[0] = ($event) => connect()),
               disabled: socket.value == null ? false : true
-            }, "Open Socket", 8, _hoisted_4)
+            }, " Open Socket ", 8, _hoisted_4)
           ]),
           createBaseVNode("div", _hoisted_5, [
             _cache[14] || (_cache[14] = createBaseVNode("label", { class: "form-label" }, "Socket URL", -1)),
@@ -6945,7 +7091,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[2] || (_cache[2] = ($event) => reqDataList())
-            }, "DataList"),
+            }, " DataList"),
             _cache[15] || (_cache[15] = createTextVNode("  "))
           ]),
           createBaseVNode("div", _hoisted_9, [
@@ -6954,7 +7100,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[3] || (_cache[3] = ($event) => reqFilterDataList())
-            }, "Filter Options"),
+            }, " Filter Options"),
             _cache[16] || (_cache[16] = createTextVNode("  "))
           ]),
           createBaseVNode("div", _hoisted_10, [
@@ -6963,7 +7109,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[4] || (_cache[4] = ($event) => clearSerial())
-            }, "Clear Output"),
+            }, " Clear Output"),
             _cache[17] || (_cache[17] = createTextVNode("  "))
           ]),
           createBaseVNode("div", _hoisted_11, [
@@ -6972,7 +7118,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[5] || (_cache[5] = ($event) => fetchAll())
-            }, "Fetch all values"),
+            }, " Fetch all values"),
             _cache[18] || (_cache[18] = createTextVNode("  "))
           ]),
           createBaseVNode("div", _hoisted_12, [
@@ -6981,7 +7127,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[6] || (_cache[6] = ($event) => clipboard())
-            }, "Copy clipboard"),
+            }, " Copy clipboard"),
             _cache[19] || (_cache[19] = createTextVNode("  "))
           ]),
           createBaseVNode("div", _hoisted_13, [
@@ -7053,7 +7199,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[11] || (_cache[11] = ($event) => reqDataInfo())
-            }, "Req: DataInfo")
+            }, " Req: DataInfo ")
           ]),
           createBaseVNode("div", _hoisted_23, [
             createBaseVNode("button", {
@@ -7061,7 +7207,7 @@ const _sfc_main = {
               style: { "width": "150px" },
               type: "button",
               onClick: _cache[12] || (_cache[12] = ($event) => reqData())
-            }, "Req: Data")
+            }, " Req: Data ")
           ])
         ]),
         _cache[27] || (_cache[27] = createBaseVNode("hr", null, null, -1)),
