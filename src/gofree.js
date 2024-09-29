@@ -53,11 +53,35 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'Cabin', label: 'Main Cabin Temperature', value: 52 },
   { valid: true, unit: '', category: 'Live Well Tank', label: 'Live Well Temperature', value: 53 },
   { valid: true, unit: '', category: 'Bait Well', label: 'Bait Well Temperature', value: 54 },
-  { valid: true, unit: '', category: 'Refrigerator', label: 'Refrigeration Temperature', value: 55 },
-  { valid: true, unit: '', category: 'Heating System', label: 'Heating System Temperature', value: 56 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Refrigerator',
+    label: 'Refrigeration Temperature',
+    value: 55
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Heating System',
+    label: 'Heating System Temperature',
+    value: 56
+  },
   { valid: true, unit: '', category: 'Weather', label: 'Dew Point Temperature', value: 57 },
-  { valid: true, unit: '', category: 'Weather', label: 'Apparent Wind Chill Temperature', value: 58 },
-  { valid: true, unit: '', category: 'Weather', label: 'Theoretic Wind Chill Temperature', value: 59 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Weather',
+    label: 'Apparent Wind Chill Temperature',
+    value: 58
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Weather',
+    label: 'Theoretic Wind Chill Temperature',
+    value: 59
+  },
   { valid: true, unit: '', category: 'Weather', label: 'Heat Index Temperature', value: 60 },
   { valid: true, unit: '', category: 'Freezer', label: 'Freezer Temperature', value: 61 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Temperature', value: 62 },
@@ -84,25 +108,85 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'Engine', label: 'Suzuki Alarm Level Low', value: 85 },
   { valid: true, unit: '', category: 'Engine', label: 'Suzuki Alarm Level High', value: 86 },
   { valid: true, unit: '', category: 'Fuel Tank', label: 'Fuel Tank Level', value: 87 },
-  { valid: true, unit: '', category: 'Fresh Water Tank', label: 'Fresh Water Fluid Level', value: 88 },
-  { valid: true, unit: '', category: 'Gray Water Tank', label: 'Gray Water Fluid Level', value: 89 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Fresh Water Tank',
+    label: 'Fresh Water Fluid Level',
+    value: 88
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Gray Water Tank',
+    label: 'Gray Water Fluid Level',
+    value: 89
+  },
   { valid: true, unit: '', category: 'Live Well Tank', label: 'Live Well Fluid Level', value: 90 },
   { valid: true, unit: '', category: 'Oil Tank', label: 'Oil Fluid Level', value: 91 },
-  { valid: true, unit: '', category: 'Black Water Tank', label: 'Black Water Fluid Level', value: 92 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Black Water Tank',
+    label: 'Black Water Fluid Level',
+    value: 92
+  },
   { valid: true, unit: '', category: 'Fuel Tank', label: 'Fuel Remaining', value: 93 },
-  { valid: true, unit: '', category: 'Fresh Water Tank', label: 'Fresh Water Fluid Volume', value: 94 },
-  { valid: true, unit: '', category: 'Gray Water Tank', label: 'Gray Water Fluid Volume', value: 95 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Fresh Water Tank',
+    label: 'Fresh Water Fluid Volume',
+    value: 94
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Gray Water Tank',
+    label: 'Gray Water Fluid Volume',
+    value: 95
+  },
   { valid: true, unit: '', category: 'Live Well Tank', label: 'Live Well Fluid Volume', value: 96 },
   { valid: true, unit: '', category: 'Oil Tank', label: 'Oil Fluid Volume', value: 97 },
-  { valid: true, unit: '', category: 'Black Water Tank', label: 'Black Water Fluid Volume', value: 98 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Black Water Tank',
+    label: 'Black Water Fluid Volume',
+    value: 98
+  },
   { valid: true, unit: '', category: 'Unconfigured', label: 'Generic Fluid Volume', value: 99 },
   { valid: true, unit: '', category: 'Unconfigured', label: 'Generic Tank Capacity', value: 105 },
   { valid: true, unit: '', category: 'Fuel Tank', label: 'Fuel Tank Capacity', value: 106 },
-  { valid: true, unit: '', category: 'Fresh Water Tank', label: 'Fresh Water Tank Capacity', value: 107 },
-  { valid: true, unit: '', category: 'Gray Water Tank', label: 'Gray Water Tank Capacity', value: 108 },
-  { valid: true, unit: '', category: 'Live Well Tank', label: 'Live Well Tank Capacity', value: 109 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Fresh Water Tank',
+    label: 'Fresh Water Tank Capacity',
+    value: 107
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Gray Water Tank',
+    label: 'Gray Water Tank Capacity',
+    value: 108
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Live Well Tank',
+    label: 'Live Well Tank Capacity',
+    value: 109
+  },
   { valid: true, unit: '', category: 'Oil Tank', label: 'Oil Tank Capacity', value: 110 },
-  { valid: true, unit: '', category: 'Black Water Tank', label: 'Black Water Tank Capacity', value: 111 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Black Water Tank',
+    label: 'Black Water Tank Capacity',
+    value: 111
+  },
   { valid: true, unit: '', category: 'Fuel Tank', label: 'Tank Fuel Used', value: 112 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Fuel Used', value: 113 },
   { valid: true, unit: '', category: 'Engine', label: 'Trip Fuel Used', value: 114 },
@@ -137,8 +221,20 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'Vessel', label: 'Set Humidity', value: 145 },
   { valid: true, unit: '', category: 'Rudder', label: 'Rudder Angle', value: 146 },
   { valid: true, unit: '', category: 'Transmission', label: 'Transmission Gear', value: 147 },
-  { valid: true, unit: '', category: 'Transmission', label: 'Transmission Oil Pressure', value: 148 },
-  { valid: true, unit: '', category: 'Transmission', label: 'Transmission Oil Temperature', value: 149 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Transmission',
+    label: 'Transmission Oil Pressure',
+    value: 148
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Transmission',
+    label: 'Transmission Oil Temperature',
+    value: 149
+  },
   { valid: true, unit: '', category: 'Rudder', label: 'Commanded Rudder Angl', value: 150 },
   { valid: true, unit: '', category: 'Rudder', label: 'Rudder Limit', value: 151 },
   { valid: true, unit: '', category: 'Vessel', label: 'Off Heading Limit', value: 152 },
@@ -148,8 +244,20 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'Other', label: 'Logging Time Remaining', value: 156 },
   { valid: true, unit: '', category: 'GPS Status', label: 'Position Fix Type', value: 157 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Discrete Status', value: 158 },
-  { valid: true, unit: '', category: 'Transmission', label: 'Transmission Discrete Status', value: 159 },
-  { valid: true, unit: '', category: 'GPS Status', label: 'GPS Best of Four Signal to Noise Ratio', value: 160 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Transmission',
+    label: 'Transmission Discrete Status',
+    value: 159
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'GPS Status',
+    label: 'GPS Best of Four Signal to Noise Ratio',
+    value: 160
+  },
   { valid: true, unit: '', category: 'Unconfigured', label: 'Generic Fluid Level', value: 161 },
   { valid: true, unit: '', category: 'Unconfigured', label: 'Generic Pressure', value: 162 },
   { valid: true, unit: '', category: 'Unconfigured', label: 'Generic Temperature', value: 163 },
@@ -238,7 +346,13 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'Other', label: 'Supply Voltage', value: 248 },
   { valid: true, unit: '', category: 'Navigation', label: 'Destination Position', value: 249 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Sync State', value: 252 },
-  { valid: true, unit: '', category: 'Engine', label: 'Engine Predictive General Maintenance', value: 253 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Engine',
+    label: 'Engine Predictive General Maintenance',
+    value: 253
+  },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Throttle', value: 254 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Steering Angle', value: 255 },
   { valid: true, unit: '', category: 'Engine', label: 'Engine Break In Required', value: 256 },
@@ -274,16 +388,46 @@ export const dataList = ref([
   { valid: true, unit: '', category: 'AC Output', label: 'AC Output 1 Status', value: 287 },
   { valid: true, unit: '', category: 'AC Output', label: 'AC Output 2 Status', value: 288 },
   { valid: true, unit: '', category: 'AC Output', label: 'AC Output 3 Status', value: 289 },
-  { valid: true, unit: '', category: 'Digital Switching', label: 'Switch Manual Override', value: 290 },
-  { valid: true, unit: '', category: 'Digital Switching', label: 'Switch Reverse Polarity', value: 291 },
-  { valid: true, unit: '', category: 'Digital Switching', label: 'Switch AC Source Available', value: 292 },
-  { valid: true, unit: '', category: 'Digital Switching', label: 'Switch AC Contactor System On State', value: 293 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Digital Switching',
+    label: 'Switch Manual Override',
+    value: 290
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Digital Switching',
+    label: 'Switch Reverse Polarity',
+    value: 291
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Digital Switching',
+    label: 'Switch AC Source Available',
+    value: 292
+  },
+  {
+    valid: true,
+    unit: '',
+    category: 'Digital Switching',
+    label: 'Switch AC Contactor System On State',
+    value: 293
+  },
   { valid: true, unit: '', category: 'Charger', label: 'Charger Battery Instance', value: 294 },
   { valid: true, unit: '', category: 'Charger', label: 'Charger Operating State', value: 295 },
   { valid: true, unit: '', category: 'Charger', label: 'Charger Mode', value: 296 },
   { valid: true, unit: '', category: 'Charger', label: 'Charger Enabled', value: 297 },
   { valid: true, unit: '', category: 'Charger', label: 'Charger Equalization Pending', value: 298 },
-  { valid: true, unit: '', category: 'Charger', label: 'Charger Equalization Time Remaining', value: 299 },
+  {
+    valid: true,
+    unit: '',
+    category: 'Charger',
+    label: 'Charger Equalization Time Remaining',
+    value: 299
+  },
   { valid: true, unit: '', category: 'Inverter', label: 'Inverter AC Instance', value: 300 },
   { valid: true, unit: '', category: 'Inverter', label: 'Inverter DC Instance', value: 301 },
   { valid: true, unit: '', category: 'Inverter', label: 'Inverter Operating State ', value: 302 },
@@ -293,7 +437,13 @@ export const dataList = ref([
 
   { valid: true, unit: '', category: 'New', label: 'Sailing Time to Waypoint', value: 304 },
   { valid: true, unit: '', category: 'New', label: 'Sailing Distance to Waypoint', value: 305 },
-  { valid: true, unit: '', category: 'New', label: 'Sailing Estimated Time of Arrival', value: 306 },
+  {
+    valid: true,
+    unit: '',
+    category: 'New',
+    label: 'Sailing Estimated Time of Arrival',
+    value: 306
+  },
   { valid: true, unit: '', category: 'New', label: 'Latitude', value: 309 },
-  { valid: true, unit: '', category: 'New', label: 'Longitude', value: 310 },
-]);
+  { valid: true, unit: '', category: 'New', label: 'Longitude', value: 310 }
+])

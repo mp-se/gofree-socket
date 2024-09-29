@@ -3,57 +3,85 @@
     <h1>Gofree Tier 2 API Explorer</h1>
 
     <div class="row row-gap-2 column-gap-2 py-2">
-      <p>Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD) such as Lowrance,
-        Simrad etc. This exposes most of the NMEA2000 data that is on your boat network. The specification can be found
-        here: <a
-          href="https://softwaredownloads.navico.com/Lowrance/FTP/Lowrance_Software%20-%20Copy/BG_Documents/GoFree-Tier2-Toolkit-(view-only).pdf">GoFree
-          Tier 2 Specification</a></p>
       <p>
-        You can can find the MFD IP under the settings -> network option. URL format is 'ws://your-ip:2053'
+        Software for interacting with the GoFree Tier 2 API on B&G Multi Function Displays (MFD)
+        such as Lowrance, Simrad etc. This exposes most of the NMEA2000 data that is on your boat
+        network. The specification can be found here:
+        <a
+          href="https://softwaredownloads.navico.com/Lowrance/FTP/Lowrance_Software%20-%20Copy/BG_Documents/GoFree-Tier2-Toolkit-(view-only).pdf"
+          >GoFree Tier 2 Specification</a
+        >
+      </p>
+      <p>
+        You can can find the MFD IP under the settings -> network option. URL format is
+        'ws://your-ip:2053'
       </p>
     </div>
 
     <div class="row row-gap-2 column-gap-2">
       <div class="col-sm-2">
         <label class="form-label">Connect</label>
-        <button class="btn btn-primary" style="width:150px" type="button" @click=connect() :disabled="socket == null ? false : true">Open
-          Socket</button>
+        <button
+          class="btn btn-primary"
+          style="width: 150px"
+          type="button"
+          @click="connect()"
+          :disabled="socket == null ? false : true"
+        >
+          Open Socket
+        </button>
       </div>
       <div class="col-sm-4">
         <label class="form-label">Socket URL</label>
-        <input v-model="url" type="text" class="form-control" :disabled="socket == null ? false : true">
+        <input
+          v-model="url"
+          type="text"
+          class="form-control"
+          :disabled="socket == null ? false : true"
+        />
       </div>
-
     </div>
 
     <div class="row row-gap-2 column-gap-2 py-2">
-
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqDataList()">DataList</button>&nbsp;
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="reqDataList()">
+          DataList</button
+        >&nbsp;
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqFilterDataList()">Filter Options</button>&nbsp;
+        <button
+          class="btn btn-secondary"
+          style="width: 150px"
+          type="button"
+          @click="reqFilterDataList()"
+        >
+          Filter Options</button
+        >&nbsp;
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="clearSerial()">Clear Output</button>&nbsp;
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="clearSerial()">
+          Clear Output</button
+        >&nbsp;
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="fetchAll()">Fetch all values</button>&nbsp;
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="fetchAll()">
+          Fetch all values</button
+        >&nbsp;
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="clipboard()">Copy clipboard</button>&nbsp;
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="clipboard()">
+          Copy clipboard</button
+        >&nbsp;
       </div>
       <div class="col-sm-4">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" v-model="showRaw">
-          <label class="form-check-label" for="flexCheckDefault">
-            Show raw packet data
-          </label>
+          <input class="form-check-input" type="checkbox" value="" v-model="showRaw" />
+          <label class="form-check-label" for="flexCheckDefault"> Show raw packet data </label>
         </div>
       </div>
     </div>
 
-    <hr>
+    <hr />
 
     <div class="row row-gap-2 column-gap-2 py-2">
       <div class="col-sm-2">
@@ -65,33 +93,37 @@
       <div class="col-sm-4">
         <label class="form-label">Data</label>
         <select v-model="selectedData" class="form-select">
-          <option v-for="data in filteredDataList" :key="data.value" :value="data.value">{{ data.label }}</option>
+          <option v-for="data in filteredDataList" :key="data.value" :value="data.value">
+            {{ data.label }}
+          </option>
         </select>
       </div>
 
       <div class="col-sm-2">
         <label class="form-label">Data ID</label>
-        <input v-model="selectedData" type="text" class="form-control">
+        <input v-model="selectedData" type="text" class="form-control" />
       </div>
-
     </div>
 
     <div class="row row-gap-2 column-gap-2 py-2">
-
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqDataInfo()">Req: DataInfo</button>
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="reqDataInfo()">
+          Req: DataInfo
+        </button>
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary" style="width:150px" type="button" @click="reqData()">Req: Data</button>
+        <button class="btn btn-secondary" style="width: 150px" type="button" @click="reqData()">
+          Req: Data
+        </button>
       </div>
     </div>
-    <hr>
+    <hr />
 
     <div class="row">
       <pre id="serial">{{ serial }}</pre>
     </div>
 
-    <hr>
+    <hr />
     <div class="row">
       <p>(c) 2024 Magnus Persson</p>
     </div>
@@ -102,30 +134,33 @@
 import { ref, onMounted, computed } from 'vue'
 import { dataList } from '@/gofree.js'
 
-const props = defineProps(['App'])
 const socket = ref(null)
-const serial = ref("Socket not connected\n")
+const serial = ref('Socket not connected\n')
 const maxLines = 500
 const showRaw = ref(false)
 const filterInvalid = ref(false)
-const selectedCat = ref("GPS")
-const selectedData = ref("1")
-const url = ref("")
+const selectedCat = ref('GPS')
+const selectedData = ref('1')
+const url = ref('')
 const dataCategoryList = ref([]) // This will be created based on data list
+
+function setSelected(v) {
+  selectedData.value = v
+}
+
 const filteredDataList = computed(() => {
   var list = []
   var found = false
 
   for (var i = 0; i < dataList.value.length; i++) {
     if (dataList.value[i].category === selectedCat.value && dataList.value[i].valid) {
-      if (dataList.value[i].value == selectedData.value)
-        found = true
+      if (dataList.value[i].value == selectedData.value) found = true
       list.push(dataList.value[i])
     }
   }
 
   if (!found && list.length > 0) {
-    selectedData.value = list[0].value
+    setSelected(list[0].value)
   }
 
   // console.log("Filtered data list", list, selectedData.value, found)
@@ -147,47 +182,56 @@ function filterCategories() {
 }
 
 onMounted(() => {
-  var u = localStorage.getItem("url")
-  if (u == null)
-    u = "ws://192.168.1.123:2053"
+  var u = localStorage.getItem('url')
+  if (u == null) u = 'ws://192.168.1.123:2053'
 
   url.value = u
 
-  if (window.location.href.startsWith("https://"))
-    serial.value += "App cannot be loaded via https since that will block access to MFD"
+  if (window.location.href.startsWith('https://'))
+    serial.value += 'App cannot be loaded via https since that will block access to MFD'
 
   filterCategories()
 })
 
 function clearSerial() {
-  serial.value = "Output cleared\n"
+  serial.value = 'Output cleared\n'
 }
 
 function reqFilterDataList() {
   filterInvalid.value = true
-  serial.value += "Filtering out invalid options\n"
+  serial.value += 'Filtering out invalid options\n'
   send('{"DataListReq":{"group":1}}')
 }
 
 function fetchAll() {
-  serial.value += "Fetching all available data\n"
+  serial.value += 'Fetching all available data\n'
 
   for (var i = 0; i < dataList.value.length; i++) {
     var instance = 0
-    send('{"DataReq":[{"id":' + dataList.value[i].value + ',"repeat":false,"inst":' + instance + '}]}')
+    send(
+      '{"DataReq":[{"id":' + dataList.value[i].value + ',"repeat":false,"inst":' + instance + '}]}'
+    )
   }
 }
 
 function reqDataList() {
   filterInvalid.value = false
-  serial.value += "Requesting available options\n"
+  serial.value += 'Requesting available options\n'
   send('{"DataListReq":{"group":1}}')
 }
 
 function reqData() {
   var repeat = false
   var instance = 0
-  send('{"DataReq":[{"id":' + selectedData.value + ',"repeat":' + repeat + ',"inst":' + instance + '}]}')
+  send(
+    '{"DataReq":[{"id":' +
+      selectedData.value +
+      ',"repeat":' +
+      repeat +
+      ',"inst":' +
+      instance +
+      '}]}'
+  )
 }
 
 function reqDataInfo() {
@@ -199,7 +243,7 @@ function send(message) {
     // console.log("Sending data: " + message)
     socket.value.send(message + '\r\n')
   } else {
-    serial.value += "Not connected\n"
+    serial.value += 'Not connected\n'
   }
 }
 
@@ -207,12 +251,9 @@ function socketCallback(data) {
   var json = JSON.parse(data)
   // console.log(json)
 
-  if (json.Data !== undefined)
-    callbackData(json)
-  else if (json.DataInfo !== undefined)
-    callbackDataInfo(json)
-  else if (json.DataList !== undefined)
-    callbackDataList(json)
+  if (json.Data !== undefined) callbackData(json)
+  else if (json.DataInfo !== undefined) callbackDataInfo(json)
+  else if (json.DataList !== undefined) callbackDataList(json)
 }
 
 function callbackData(json) {
@@ -232,14 +273,23 @@ function callbackData(json) {
   }
 
   /* Display the value received */
-  for (var j = 0; j < json.Data.length; j++) {
-    for (var i = 0; i < dataList.value.length; i++) {
+  for (j = 0; j < json.Data.length; j++) {
+    for (i = 0; i < dataList.value.length; i++) {
       if (dataList.value[i].value == json.Data[j].id && json.Data[j].valid) {
-        serial.value += dataList.value[i].value + " - " + dataList.value[i].category + " - " + dataList.value[i].label + ": " + json.Data[j].valStr.replace('&deg;', '°') + " " + dataList.value[i].unit + "\n"
+        serial.value +=
+          dataList.value[i].value +
+          ' - ' +
+          dataList.value[i].category +
+          ' - ' +
+          dataList.value[i].label +
+          ': ' +
+          json.Data[j].valStr.replace('&deg;', '°') +
+          ' ' +
+          dataList.value[i].unit +
+          '\n'
       }
     }
   }
-
 }
 
 function callbackDataInfo(json) {
@@ -248,7 +298,8 @@ function callbackDataInfo(json) {
     for (var i = 0; i < dataList.value.length; i++) {
       if (dataList.value[i].value == json.DataInfo[j].id) {
         dataList.value[i].unit = json.DataInfo[j].unit.replace('&deg;', '°')
-        serial.value += "Using unit " + dataList.value[i].unit + " for " + dataList.value[i].label + "\n"
+        serial.value +=
+          'Using unit ' + dataList.value[i].unit + ' for ' + dataList.value[i].label + '\n'
       }
     }
   }
@@ -261,12 +312,11 @@ function callbackDataList(json) {
     var found = false
 
     for (var j = 0; j < dataList.value.length; j++) {
-      if (list[i] === dataList.value[j].value)
-        found = true
+      if (list[i] === dataList.value[j].value) found = true
     }
 
     if (!found) {
-      serial.value += "Data " + list[i] + " not found in specification, requesting info!\n"
+      serial.value += 'Data ' + list[i] + ' not found in specification, requesting info!\n'
       send('{"DataInfoReq":[' + list[i] + ']}')
     }
 
@@ -280,44 +330,42 @@ function callbackDataList(json) {
 }
 
 function clipboard() {
-  var text = document.getElementById("serial").innerHTML
+  var text = document.getElementById('serial').innerHTML
   console.log(text)
-  navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(text)
 }
 
 function connect() {
-  serial.value += "Connecting...\n"
-  localStorage.setItem("url", url.value)
+  serial.value += 'Connecting...\n'
+  localStorage.setItem('url', url.value)
 
   socket.value = new WebSocket(url.value)
 
-  socket.value.onopen = function (e) {
+  socket.value.onopen = function () {
     // console.log("Websocket established")
-    serial.value = "Socket open\n"
+    serial.value = 'Socket open\n'
   }
 
   socket.value.onmessage = function (event) {
     // console.log("Websocket receive: " + event)
-    var list = serial.value.split("\n");
-    while (list.length > maxLines)
-      list.shift();
-    serial.value = list.join('\n');
+    var list = serial.value.split('\n')
+    while (list.length > maxLines) list.shift()
+    serial.value = list.join('\n')
 
-    if (showRaw.value)
-      serial.value += event.data + '\n'
+    if (showRaw.value) serial.value += event.data + '\n'
 
     socketCallback(event.data)
   }
 
-  socket.value.onclose = function (event) {
+  socket.value.onclose = function () {
     // console.log("Websocket close: " + event)
 
-    serial.value += "Socket closed\n"
+    serial.value += 'Socket closed\n'
     socket.value = null
   }
 
-  socket.value.onerror = function (event) {
-    serial.value += "Failed to connect with MFD\n"
+  socket.value.onerror = function () {
+    serial.value += 'Failed to connect with MFD\n'
   }
 }
 </script>
