@@ -8,27 +8,32 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "lint": "eslint src/* --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "bootstrap": "^5.3.8",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.29",
+    "vue-router": "^5.0.3"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.8.0",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/eslint-config-prettier": "^9.0.0",
+    "@eslint/js": "^10.0.1",
+    "@rushstack/eslint-patch": "^1.16.1",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.4.6",
-    "cors": "^2.8.5",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.23.0",
-    "jsdom": "^24.1.0",
-    "prettier": "^3.2.5",
-    "vite": "^5.4.2",
+    "cors": "^2.8.6",
+    "eslint": "^10.0.2",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.3.0",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.8.1",
+    "vite": "^7.3.1",
     "vite-plugin-compression": "^0.5.1",
-    "vitest": "^1.6.0"
+    "vitest": "^4.0.18"
+  },
+  "overrides": {
+    "minimatch": "^10.2.3"
   }
 }
